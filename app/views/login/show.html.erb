@@ -1,0 +1,68 @@
+<!DOCTYPE>
+<html>
+  <head>
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+ 
+  
+   <%= stylesheet_link_tag 'Login', media: 'all', 'data-turbolinks-track' => true %>
+
+  </head>
+<body background="<%= asset_path 'fondo.jpg' %>">
+</body>
+  <body >
+ 
+   <P ALIGN=center><div class="container">
+    <div class="row">
+	<div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-default">
+	<div class="panel-heading">
+	<P ALIGN=center><h3 class="panel-title"><P ALIGN=center>Por favor ingrese</P></h3>
+			 	</div>
+			  	<div class="panel-body">
+
+			    	<!--<form accept-charset="UTF-8" role="form">
+                    <fieldset>
+-->
+<%= form_for :user, url: {action: "create"} do |f|  %>
+  <div align="center">
+  <br>
+    <%= f.label :Usuario %><br>
+    <%= f.text_field :Usuario, autocomplete: "off" %>
+  </div>
+<br>
+  <div align="center">
+    <%= f.label :Contraseña %><br>
+    <%= f.password_field :Contraseña %>
+  </div>
+  </br>
+<br>
+  <div align="center">
+    <%= f.submit %>
+  </div>
+  </br>
+  </div>
+<% end %>
+
+
+			    	  	<!--<div class="form-group">
+			    		    <input class="form-control" placeholder="Usuario" name="usuario" type="text">
+			    		</div>
+			    		<div class="form-group">
+			    			<input class="form-control" placeholder="Contrasena" name="contraseña" type="password" value="">
+			    		</div>
+			    		
+			    		<P ALIGN=center><input class="btn btn-lg btn-success btn" type="button" value="Entrar" onClick=" window.location.href='Administrador.html' "></P>
+			    		<P ALIGN=center><input class="btn btn-lg btn-success btn" type="button" value="Recep" onClick=" window.location.href='Recepcionista.html' "></P>
+			    	</fieldset>
+			    	-->
+			      	</form>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div></P>
+  </body>
+</html>

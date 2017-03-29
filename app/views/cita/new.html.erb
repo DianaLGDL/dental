@@ -1,0 +1,128 @@
+<p id="notice"><%= notice %></p>
+<!DOCTYPE>
+
+<html>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<head>
+<%= stylesheet_link_tag 'agendarcita', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_tag 'jquery-2.1.3.min', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_tag 'knockout-3.2.0', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_tag 'material.datepicker', media: 'all', 'data-turbolinks-track' => true %>   
+</head>
+<style>
+
+body{
+
+  height: 100%;
+}
+
+#agendar{
+
+  background-color: #FFFFFF;
+  font-family: arial;
+  width: 850px;
+  height:550px;
+  margin: auto;
+  position: relative;
+  border-style: ridge;
+  text-align: left;
+
+}
+
+#conte{
+
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 400px;
+}
+
+#menu{
+
+background-color: #6EC6DC;
+height: 90px;
+font-family: arial;
+text-align: center;
+font-size: 60;
+}
+
+</style>
+</head>
+
+
+<body background="<%= asset_path 'fondo.jpg' %>">
+<div id="menu">
+
+</div>
+<div id="agendar">
+<div id="conte">
+<fieldset>
+<legend>Agenda de citas</legend>
+
+
+<%= form_for :cita, url: { action: "create" }  do |f|  %>   
+ <div> <%= flash[:notice] %></div>
+<div>
+<p>Ingresa folio</p>
+<br>
+  <%= f.label :Folio%>
+  <%= f.text_field :Folio%>
+</div>
+
+<div>
+<p>Seleccione la fecha</p>
+<br>
+  <%= f.label :Hora_Programada%>
+  <%= f.date_select :Fecha_Programada %>
+</div>
+<br>
+<div>
+<p>Seleccione la hora</p>
+<br>
+  <%= f.label :Hora_Programada%>
+  <%= f.time_select :Hora_Programada %>
+  </br>
+</div>
+<br>
+  <div>
+  <p>Seleccione el tratamiento</p>
+<br>
+  <%= f.label :Servicio_ID%>
+  <%= f.select :Servicio_ID, options_for_select(
+   [["Blanqueamiento", 1000], 
+    ["Endodoncia", 1001], 
+    ["Implantes", 1002], 
+    ["Empaste", 1003],
+    ["Limpieza", 1004],
+    ["Brackets", 1005],
+    ["Placas", 1006], 
+    ["Perodoncia", 1007], 
+    ["Extraccion", 1008], 
+    ["Corona y puente",1009]]) %>
+    </br>
+    </div>
+   <br>
+<div>
+<p>Escriba el motivo</p>
+<br>
+  <%= f.label :Motivo%>
+  <%= f.text_field :Motivo, autocomplete: "off" %>
+  </br>
+</div>
+  </div>
+    <div align="center">
+    <br>
+    <%= f.submit :Agendar %>
+    </br>
+  </div>
+
+  <% end %>
+
+</fieldset>
+</body>
+</html>

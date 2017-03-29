@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Historia Clinica</title>
+  <link rel="icon" type="image/png" href="images/mifavicon.png" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+ <style>
+   form.elegante input {
+  padding: .2em;
+
+}
+label {
+  display: block;
+  margin: .5em 0 0 0;
+}
+.btn {
+  display: block;
+  margin: 1em 0;
+}
+div {
+  margin: .4em 0;
+}
+div label {
+  width: 25%;
+  float: left;
+}
+</style>
+
+</head>
+<body>
+  <fieldset>
+ <legend> <center>Historial de paciente</center></legend>
+ <!--Solo tiene que visualizar -->
+ <br>
+<%= form_for :get do |f| %>
+  <div>
+    <%= f.label :Nombre %>
+    <%= f.text_field :Nombre%>
+  </div>
+
+ <div>
+    <%= f.label :Apellido_Paterno%> 
+    <%= f.text_field :ApellidoP%>
+  </div>
+
+  <div>
+    <%= f.label :Apellido_Materno%> 
+    <%= f.text_field :ApellidoM%>
+  </div>
+
+  <div>
+    <%= f.label :Edad%> 
+    <%= f.text_field :Edad%>
+  </div>
+
+  <div>
+    <%= f.label :Sexo%> 
+    <%= f.text_field :Sexo%>
+  </div>
+
+  <div>
+    <%= f.label :Calle%> 
+    <%= f.text_field :Calle%>
+  </div>
+
+  <div>
+    <%= f.label :Número_Domicilio%> 
+    <%= f.text_field :NumDomicilio%>
+  </div>
+
+  <div>
+    <%= f.label :Telefono%> 
+    <%= f.text_field :Telefono%>
+  </div>
+
+  <div>
+    <%= f.label :Móvil%> 
+    <%= f.text_field :Movil%>
+  </div>
+
+  <div>
+    <%= f.label :Estado_Civil%> 
+    <%= f.text_field :EstadoCivil%>
+  </div>
+
+  <div>
+    <%= f.label :Ocupación%> 
+    <%= f.text_field :Ocupacion%>
+  </div>
+
+   <div>
+    <%= f.label :Fecha_De_Registro%> 
+    <%= f.text_field :FechaRegistro%>
+  </div>
+
+  <div>
+    <%= f.label :Estado%> 
+    <%= f.text_field :Estado%>
+  </div>
+  <div align="center">
+    <%= f.submit :Visualizar%>
+  </div>
+  </br>
+<% end %>
+</fieldset>
+</form>
+</body>
+</html>

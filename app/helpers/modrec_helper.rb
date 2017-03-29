@@ -1,0 +1,2 @@
+module ModrecHelper
+end

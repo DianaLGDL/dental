@@ -1,0 +1,19 @@
+html{
+	height:100%;
+}
+
+body {
+	height:100%;
+}
+#MainContainer {
+	margin:auto;
+	background-color:#ececec;
+	width:610px;
+	height:100%;
+	position:relative;
+	top:0px;
+	bottom:0px;
+}
+body {
+background-color:#9F0;
+}

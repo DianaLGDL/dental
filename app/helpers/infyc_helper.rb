@@ -1,0 +1,2 @@
+module InfycHelper
+end

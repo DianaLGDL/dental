@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<style>
+   form.elegante input {
+  padding: .2em;
+
+}
+label {
+  display: block;
+  margin: .5em 0 0 0;
+}
+.btn {
+  display: block;
+  margin: 1em 0;
+}
+div {
+  margin: .4em 0;
+}
+div label {
+  width: 25%;
+  float: left;
+}
+</style>
+</head>
+<body>
+<fieldset>
+  <legend><center>Marque la opcion si a padecido o tiene alguna de estas enfermedades</center></legend>
+<br>
+ <%= form_for :paciente , url: {action: "create" , :id =>@id } do |f|  %>
+  
+    <div>
+    <%= f.label :Diabetes %>
+    <%= f.radio_button :Diabetes,"1"%>Sí
+     <%= f.radio_button :Diabetes,"2"%>No
+  </div>
+  
+  <div>
+    <%= f.label :Colitis %>
+    <%= f.radio_button :Colitis,"1"%>Sí
+     <%= f.radio_button :Colitis,"2"%>No
+  </div>
+  
+  <div>
+    <%= f.label :Cancer %>
+    <%= f.radio_button :Cancer,"1"%>Sí
+     <%= f.radio_button :Cancer,"2"%>No
+  </div>
+  
+  <div>
+    <%= f.label :Problemas_Cardiacos %>
+    <%= f.radio_button :ProblemaCardiaco,"1"%>Sí
+    <%= f.radio_button :ProblemaCardiaco,"2"%>No
+  </div>
+
+  <div>
+    <%= f.label :Alta_Presión %>
+    <%= f.radio_button :AltaPr,"1"%>Sí
+    <%= f.radio_button :AltaPr,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Baja_Presión %>
+    <%= f.radio_button :BajaPr,"1"%>Sí
+    <%= f.radio_button :BajaPr,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Epilepsia %>
+    <%= f.radio_button :Epilepsia,"1"%>Sí
+    <%= f.radio_button :Epilepsia,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Tuberculosis %>
+    <%= f.radio_button :Tuberculosis,"1"%>Sí
+    <%= f.radio_button :Tuberculosis,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Hepatitis %>
+    <%= f.radio_button :Hepatitis,"1"%>Sí
+    <%= f.radio_button :Hepatitis,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Problema_Renal %>
+    <%= f.radio_button :ProblemaRenal,"1"%>Sí
+    <%= f.radio_button :ProblemaRenal,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Anemia %>
+    <%= f.radio_button :Anemia,"1"%>Sí
+    <%= f.radio_button :Anemia,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Problemas_Nerviosos %>
+    <%= f.radio_button :ProblemaNervios,"1"%>Sí
+    <%= f.radio_button :ProblemaNervios,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Leucemia %>
+    <%= f.radio_button :Leucemia,"1"%>Sí
+    <%= f.radio_button :Leucemia,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Artritis %>
+    <%= f.radio_button :Artritis,"1"%>Sí
+    <%= f.radio_button :Artritis,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Problemas_de_Coagulación %>
+    <%= f.radio_button :ProblemaCoagulacion,"1"%>Sí
+    <%= f.radio_button :ProblemaCoagulacion,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Dolor_De_Cabeza %>
+    <%= f.radio_button :DolorCabeza,"1"%>Sí
+    <%= f.radio_button :DolorCabeza,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Tiroides %>
+    <%= f.radio_button :Tiroides,"1"%>Sí
+    <%= f.radio_button :Tiroides,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :VIH %>
+    <%= f.radio_button :VIH,"1"%>Sí
+    <%= f.radio_button :VIH,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Asma %>
+    <%= f.radio_button :Asma,"1"%>Sí
+    <%= f.radio_button :Asma,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :ETS %>
+    <%= f.radio_button :ETS,"1"%>Sí
+    <%= f.radio_button :ETS,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Sinusitis %>
+    <%= f.radio_button :Sinusitis,"1"%>Sí
+    <%= f.radio_button :Sinusitis,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Gastritis %>
+    <%= f.radio_button :Gastritis,"1"%>Sí
+    <%= f.radio_button :Gastritis,"2"%>No
+  </div>
+
+   <div>
+    <%= f.label :Ulcera %>
+    <%= f.radio_button :Ulcera,"1"%>Sí
+    <%= f.radio_button :Ulcera,"2"%>No
+  </div>
+
+
+   <div>
+    <%= f.label :Embarazo_Sólo_mujeres %>
+    <%= f.radio_button :Embarazo,"1"%>Sí
+    <%= f.radio_button :Embarazo,"2"%>No
+  </div>
+
+
+<br>
+ <div>
+    <%= f.label :Menciona_Cualquier_Problema_Medico_Que_haya_tenido_o_tenga%> 
+    <%= f.text_field :ProblemaMedico%>
+  </div>
+</br>
+<br>
+   <div>
+    <%= f.label :Es_usted_alergico_a_algún_medicamento_o_alimento%> 
+    <%= f.text_field :Alergico%>
+  </div>
+</br>
+<br>
+  <div>
+    <%= f.label :Depende_usted_de_algun_medicamento_especifique_cual%> 
+    <%= f.text_field :DependenciaMedica%>
+  </div>
+</br>
+</br>
+ <div align="center">
+    <%= f.submit :Crear%>
+  </div>
+<% end %>
+</form>
+</fieldset>
+</body>
+</html>

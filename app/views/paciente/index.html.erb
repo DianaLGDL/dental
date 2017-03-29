@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+<head> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></head>
+<center><legend><h1>Registros</h1></legend></center>
+</br>
+<%= link_to 'Crear Paciente', '/paciente/new' %>
+</br>
+</br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Folio</th>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Sexo</th>
+      <th>Calle</th>
+      <th>Numero Domicilio</th>
+      <th>Telefono</th>
+      <th>Movil</th>
+      <th>Ocupación</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paciente.each do |paciente| %>
+      <tr>
+      <td><%= paciente['Folio'] %></td>
+        <td><%= paciente['Nombre']  %> <%= paciente['S_Nombre'] %> <%= paciente['Apellido_Paterno'] %> <%= paciente['Apellido_Materno'] %></td>
+        <td><%= paciente['Edad'] %></td>
+        <td><%= paciente['Sexo'] %></td>
+        <td><%= paciente['Calle'] %></td>
+        <td><%= paciente['Numero_Domicilio'] %></td>
+        <td><%= paciente['Telefono']%></td>
+        <td><%= paciente['Movil'] %></td>
+        <td><%= paciente['Ocupacion'] %></td>
+        <td><%= link_to 'Modifica', :action => :edit , :id => paciente['Folio'] %></td> 
+        <td><%= link_to 'Crear nuevo Expediente',:controller => :antecedente , :action => :new , :id => paciente['ID'] %></td> 
+        <td><%= link_to 'Agendar Cita',:controller => :cita , :action => :new , :id => paciente['ID'] %></td> 
+        
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

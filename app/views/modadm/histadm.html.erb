@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" type="image/png" href="images/mifavicon.png" />
+  <title>Historia Clinica</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+ <style>
+   form.elegante input {
+  padding: .2em;
+
+}
+label {
+  display: block;
+  margin: .5em 0 0 0;
+}
+.btn {
+  display: block;
+  margin: 1em 0;
+}
+div {
+  margin: .4em 0;
+}
+div label {
+  width: 25%;
+  float: left;
+}
+</style>
+
+</head>
+<body>
+  <fieldset>
+ <legend> <center>Historial de paciente</center></legend>
+ <!--CRear historial -->
+  <br>
+  <%= form_for :put do |f| %>
+  <div>
+    <%= f.label :Nombre %>
+    <%= f.text_field :Nombre%>
+  </div>
+
+ <div>
+    <%= f.label :Apellido_Paterno%> 
+    <%= f.text_field :ApellidoP%>
+  </div>
+
+  <div>
+    <%= f.label :Apellido_Materno%> 
+    <%= f.text_field :ApellidoM%>
+  </div>
+
+  <div>
+    <%= f.label :Edad%> 
+    <%= f.text_field :Edad%>
+  </div>
+
+  <div>
+    <%= f.label :Sexo%> 
+    <%= f.text_field :Sexo%>
+  </div>
+
+  <div>
+    <%= f.label :Calle%> 
+    <%= f.text_field :Calle%>
+  </div>
+
+  <div>
+    <%= f.label :Número_Domicilio%> 
+    <%= f.text_field :NumDomicilio%>
+  </div>
+
+  <div>
+    <%= f.label :Telefono%> 
+    <%= f.text_field :Telefono%>
+  </div>
+
+  <div>
+    <%= f.label :Móvil%> 
+    <%= f.text_field :Movil%>
+  </div>
+
+  <div>
+    <%= f.label :Estado_Civil%> 
+    <%= f.text_field :EstadoCivil%>
+  </div>
+
+  <div>
+    <%= f.label :Ocupación%> 
+    <%= f.text_field :Ocupacion%>
+  </div>
+
+   <div>
+    <%= f.label :Fecha_De_Registro%> 
+    <%= f.text_field :FechaRegistro%>
+  </div>
+
+  <div>
+    <%= f.label :Estado%> 
+    <%= f.text_field :Estado%>
+  </div>
+  </br>
+  <div align="center">
+    <%= f.submit :Crear%>
+    <%= f.submit :Editar%>
+    <%= f.submit :Borrar%>
+  </div>
+<% end %>
+  
+</fieldset>
+<fieldset>
+  <legend><center>Marque la opcion si a padecido o tiene alguna de estas enfermedades</center></legend>
+<br>
+ <%= form_for :put do |f| %>
+  
+  <div>
+    <%= f.label :Diabetes %>
+    <%= f.radio_button :Diabetes,"Sí"%>Sí
+     <%= f.radio_button :Diabetes,"No"%>No
+  </div>
+  
+  <div>
+    <%= f.label :Colitis %>
+    <%= f.radio_button :Colitis,"Sí"%>Sí
+     <%= f.radio_button :Colitis,"No"%>No
+  </div>
+  
+  <div>
+    <%= f.label :Cancer %>
+    <%= f.radio_button :Cancer,"Sí"%>Sí
+     <%= f.radio_button :Cancer,"No"%>No
+  </div>
+  
+  <div>
+    <%= f.label :Problemas_Cardiacos %>
+    <%= f.radio_button :ProblemaCardiaco,"Sí"%>Sí
+    <%= f.radio_button :ProblemaCardiaco,"No"%>No
+  </div>
+
+  <div>
+    <%= f.label :Alta_Presión %>
+    <%= f.radio_button :AltaPr,"Sí"%>Sí
+    <%= f.radio_button :AltaPr,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Baja_Presión %>
+    <%= f.radio_button :BajaPr,"Sí"%>Sí
+    <%= f.radio_button :BajaPr,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Epilepsia %>
+    <%= f.radio_button :Epilepsia,"Sí"%>Sí
+    <%= f.radio_button :Epilepsia,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Tuberculosis %>
+    <%= f.radio_button :Tuberculosis,"Sí"%>Sí
+    <%= f.radio_button :Tuberculosis,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Hepatitis %>
+    <%= f.radio_button :Hepatitis,"Sí"%>Sí
+    <%= f.radio_button :Hepatitis,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Problema_Renal %>
+    <%= f.radio_button :ProblemaRenal,"Sí"%>Sí
+    <%= f.radio_button :ProblemaRenal,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Anemia %>
+    <%= f.radio_button :Anemia,"Sí"%>Sí
+    <%= f.radio_button :Anemia,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Problemas_Nerviosos %>
+    <%= f.radio_button :ProblemaNervios,"Sí"%>Sí
+    <%= f.radio_button :ProblemaNervios,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Leucemia %>
+    <%= f.radio_button :Leucemia,"Sí"%>Sí
+    <%= f.radio_button :Leucemia,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Artritis %>
+    <%= f.radio_button :Artritis,"Sí"%>Sí
+    <%= f.radio_button :Artritis,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Problemas_de_Coagulación %>
+    <%= f.radio_button :ProblemaCoagulacion,"Sí"%>Sí
+    <%= f.radio_button :ProblemaCoagulacion,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Dolor_De_Cabeza %>
+    <%= f.radio_button :DolorCabeza,"Sí"%>Sí
+    <%= f.radio_button :DolorCabeza,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Tiroides %>
+    <%= f.radio_button :Tiroides,"Sí"%>Sí
+    <%= f.radio_button :Tiroides,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :VIH %>
+    <%= f.radio_button :VIH,"Sí"%>Sí
+    <%= f.radio_button :VIH,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Asma %>
+    <%= f.radio_button :Asma,"Sí"%>Sí
+    <%= f.radio_button :Asma,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :ETS %>
+    <%= f.radio_button :ETS,"Sí"%>Sí
+    <%= f.radio_button :ETS,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Sinusitis %>
+    <%= f.radio_button :Sinusitis,"Sí"%>Sí
+    <%= f.radio_button :Sinusitis,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Gastritis %>
+    <%= f.radio_button :Gastritis,"Sí"%>Sí
+    <%= f.radio_button :Gastritis,"No"%>No
+  </div>
+
+   <div>
+    <%= f.label :Ulcera %>
+    <%= f.radio_button :Ulcera,"Sí"%>Sí
+    <%= f.radio_button :Ulcera,"No"%>No
+  </div>
+
+
+   <div>
+    <%= f.label :Embarazo_Sólo_mujeres %>
+    <%= f.radio_button :Embarazo,"Sí"%>Sí
+    <%= f.radio_button :Embarazo,"No"%>No
+  </div>
+
+<br>
+ <div>
+    <%= f.label :Menciona_Cualquier_Problema_Medico_Que_haya_tenido_o_tenga%> 
+    <%= f.text_field :ProblemaMedico%>
+  </div>
+</br>
+<br>
+   <div>
+    <%= f.label :Es_usted_alergico_a_algún_medicamento_o_alimento%> 
+    <%= f.text_field :Alergico%>
+  </div>
+</br>
+<br>
+  <div>
+    <%= f.label :Depende_usted_de_algun_medicamento_especifique_cual%> 
+    <%= f.text_field :DependenciaMedica%>
+  </div>
+</br>
+</br>
+ <div align="center">
+    <%= f.submit :Crear%>
+    <%= f.submit :Editar%>
+    <%= f.submit :Borrar%>
+  </div>
+<% end %>
+</form>
+</fieldset>
+</body>
+</html>

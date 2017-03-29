@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+ <style>
+   form.elegante input {
+  padding: .2em;
+
+}
+label {
+  display: block;
+  margin: .5em 0 0 0;
+}
+.btn {
+  display: block;
+  margin: 1em 0;
+}
+div {
+  margin: .4em 0;
+}
+div label {
+  width: 25%;
+  float: left;
+}
+</style>
+
+</head>
+<body>
+  <fieldset>
+ <legend> <center><h1>Historial de paciente</h1></center></legend>
+ <!--CRear historial -->
+  <br>
+<%= form_for :paciente , url: {action: "update" , :id =>@f } do |f|  %>
+  <div> <%= flash[:notice] %></div>
+</br>
+  <div>
+    <%= f.label :Calle%> 
+    <%= f.text_field :Calle%>
+  </div>
+
+  <div>
+    <%= f.label :Número_Domicilio%> 
+    <%= f.text_field :NumDomicilio%>
+  </div>
+
+  <div>
+    <%= f.label :Telefono%> 
+    <%= f.text_field :Telefono%>
+  </div>
+
+  <div>
+    <%= f.label :Móvil%> 
+    <%= f.text_field :Movil%>
+  </div>
+  <div>
+    <%= f.label :Ocupación%> 
+    <%= f.text_field :Ocupacion%>
+  </div>
+ <div>
+    <%= f.label :Sexo%> 
+     <%= f.select :Sexo, options_for_select(
+    [["Masculino", "M"], ["Femenino", "F"]]) %>
+  </div>
+</br>
+  <div>
+    <%= f.label :Estado_Civil%>
+    <%= f.select :EstadoCivil, options_for_select(
+    [["Soltero", 1], ["Casado", 2], ["Divorciado", 3], ["Viudo", 4], ["Sin especificar", 5]]) %>
+  </div>
+  </br>
+  <div align="center">
+    <%= f.submit :Editar %>
+  </div>
+<% end %>
+<%= link_to 'Retornar', '/paciente/index' %>
+</body>
+</html>

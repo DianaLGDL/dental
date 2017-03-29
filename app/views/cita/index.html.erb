@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<head> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></head>
+<center><legend><h1>Registros</h1></legend></center>
+</br>
+<%= link_to 'Crear Cita', '/cita/new' %>
+</br>
+</br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Folio</th>
+      <th>Fecha Registro</th>
+      <th>Fecha Programada</th>
+      <th>Hora Programada</th>
+      <th>Servicios</th>
+      <th>Motivo</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cita.each do |cita| %>
+      <tr>
+        <td><%= cita['Folio'] %></td>
+        <td><%= cita['Fecha_Registro'] %></td>
+        <td><%= cita['Fecha_Programada'] %></td>
+        <td><%= cita['Hora_Programada'] %></td>
+        <td><%= cita['Servicios'] %></td>
+        <td><%= cita['Motivo'] %></td>
+        <td><%= link_to 'Borrar', :action => :destroy , :Folio => cita['Folio'] %></td> 
+        
+        
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
